@@ -1,0 +1,32 @@
+title: IFrame
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.media_order:
+              label: Page Media (first one will be displayed next to your content)
+            header.iframe:
+              type: text
+              label: IFrame Code
+              size: large
+            header.cta_button:
+              type: toggle
+              label: CallToAction Button aktivieren
+              help: Hier ist eine hilfreiche Erklärung für die Checkbox
+              highlight: 1
+              default: 1
+              options:
+                1: Ja
+                0: Nein
+            header.cta_button_text:
+              type: text
+              label: CallToAction Button Text
+              size: medium
+            header.cta_button_action:
+              type: text
+              label: CallToAction Button Target
+              size: medium

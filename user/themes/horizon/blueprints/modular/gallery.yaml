@@ -1,0 +1,15 @@
+title: Gallery Module
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.gallery_style:
+              type: select
+              label: Gallery Style
+              options:
+                carousel: Carousel
+                bento: Bento

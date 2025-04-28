@@ -19,5 +19,33 @@ form:
               label: Hero Image
               preview_images: true
               description: 'If not specified, this defaults to the first image found in the page''s folder'
+            header.hero_align:
+              type: select
+              label: Text Alignment
+              highlight: left
+              default: left
+              options:
+                left: Left
+                center: Center
+                right: Right
+            header.hero_button:
+              type: toggle
+              label: Hero Button aktivieren
+              help: Hier ist eine hilfreiche Erklärung für die Checkbox
+              highlight: 1
+              default: 1
+              options:
+                1: Ja
+                0: Nein
+            header.hero_button_text:
+              type: text
+              label: Hero Button Text
+              size: medium
+              description: 'If not specified, this defaults to the first image found in the page''s folder'
+            header.hero_button_action:
+              type: text
+              label: Hero Button Action
+              size: medium
+              description: 'If not specified, this defaults to the first image found in the page''s folder'
 
 

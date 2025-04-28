@@ -1,0 +1,15 @@
+
+{% set grid_size = theme_var('grid-size') %}
+{% set images = page.media.images %}
+
+<section class="section modular-contact {{ page.header.class}}">
+  <section class="container {{ grid_size }}">
+        <div class="contact-text">
+            {{content|raw}}
+        </div>
+        <div class="map iframe-frame-container">              
+            {{ page.header.iframe | raw }}
+        </div>
+    </section>
+</section>
+

@@ -1,0 +1,9 @@
+version: '1.2'
+timestamp: 1745528149
+count: 1
+index:
+  portfolio:
+    storage_key: portfolio
+    storage_timestamp: 1745528149
+    key: portfolio
+    email: portfolio@petersbase.de

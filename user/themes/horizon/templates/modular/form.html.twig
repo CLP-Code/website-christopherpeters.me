@@ -1,0 +1,11 @@
+{% set grid_size = theme_var('grid-size') %}
+{% set image = page.media.images|first %}
+
+<section class="section modular-text {{ page.header.class}}">
+    <section class="container {{ grid_size }}">
+        {% block content %}
+            {{ content|raw }}
+            {% include 'forms/form.html.twig' %}
+        {% endblock %}
+    </section>
+</section>

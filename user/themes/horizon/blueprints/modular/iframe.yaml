@@ -1,0 +1,51 @@
+title: IFrame
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.media_order:
+              label: Page Media (first one will be displayed next to your content)
+            header.iframe:
+              type: text
+              label: IFrame Code
+              size: large
+            header.iframe_container_title:
+              type: text
+              label: Container title
+              size: medium
+            header_calltoaction_button:
+              type: toggle
+              label: Call To Action Button
+              help: When enabled, a transparent style will be used
+              highlight: 0
+              default: 0
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+
+            header_calltoaction_button_text:
+              type: text
+              label: CTA - Button Text
+              help: Provides the possibility to Add Text to the CTA Button
+              size: medium
+              default: ''
+              
+            header_calltoaction_button_action:
+              type: text
+              label: CTA - Button Action
+              help: Provides the possibility to Add Link to the CTA Button
+              size: medium
+              default: ''
+
+            header_calltoaction_button_icon:
+              type: text
+              label: CTA - Button Icon
+              help: Provides the possibility to Add an Icon to the CTA Button
+              size: medium
+              default: ''

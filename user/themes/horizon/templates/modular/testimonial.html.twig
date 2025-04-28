@@ -1,0 +1,22 @@
+{% set grid_size = theme_var('grid-size') %}
+{% set image = page.media.images|first %}
+
+<section class="section modular-testimonial {{ page.header.class}}">
+    <section class="container {{ grid_size }}">
+        {{ content|raw }}
+        <div class="testimonial-carousel">
+            <div class="testimonial-wrapper">
+                {% for testimonial in page.header.testimonials %}
+                    <div class="testimonial-item{% if loop.first %} active{% endif %}">
+                        <p class="testimonial-text">{{ testimonial.text|raw }}</p>
+                        <div class="testimonial-author">{{ testimonial.author }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="testimonial-controls">
+                <button class="testimonial-prev" aria-label="Vorheriges Testimonial">&larr;</button>
+                <button class="testimonial-next" aria-label="Nächstes Testimonial">&rarr;</button>
+            </div>
+        </div>
+    </section>
+</section>

@@ -1,0 +1,27 @@
+{% set grid_size = theme_var('grid-size') %}
+{% set image = page.media.images|first %}
+
+<section class="section modular-iframe {{ page.header.class}}">
+    <section class="container {{ grid_size }}">
+            {{content|raw}}
+            
+            <div class="iframe-container">
+                <div class="iframe-header">
+                    <div class="iframe-logo">
+                        {{ image|raw }}
+                    </div>
+                    <span>{{ page.header.iframe_container_title }}</span>
+                </div>
+                
+                <div class="iframe-frame-container">              
+                    {{ page.header.iframe | raw }}
+                </div>
+                
+                <div class="iframe-footer">
+                    <p>Für eine persönliche Beratung oder zur Vereinbarung einer Probefahrt kontaktieren Sie uns bitte telefonisch.
+                        {% if grav.theme.config.header_calltoaction_button %}
+                            <button class="btn small" onclick="{{ grav.theme.config.header_calltoaction_button_action }}">{{ grav.theme.config.header_calltoaction_button_text }} <i class="fa fa-fw {{ grav.theme.config.header_calltoaction_button_icon }}"></i></button>
+                        {% endif %}
+                </div>
+    </section>
+</section>

@@ -1,19 +1,29 @@
 {% set grid_size = theme_var('grid-size') %}
 {% set image = page.media.images|first %}
 
-<section class="section modular-text {{ page.header.class}} bg-gray">
+<section class="section modular-text {{ page.header.class}}">
     <section class="container {{ grid_size }}">
         <div class="columns {{ page.header.image_align|default('align-right') }}">
             {% if image %}
             <div class="column col-6 col-md-12">
                 {{ content|raw }}
+                {% if page.header.cta_button %}
+                    <button class="btn">{{ page.header.cta_button_text }}</button>
+                {% endif %}
             </div>
             <div class="column col-6 col-md-12">
-                {{ image.html|raw }}
+            {% if page.header.image_type == "poleroid" %}
+                {% include 'partials/polaroid-slider.html.twig' %}
+            {% elseif  page.header.image_type == "default"%}
+                <img src="{{ image.url }}"/>
+            {% endif %}
             </div>
             {% else %}
             <div class="column col-12">
                 {{ content|raw }}
+                {% if page.header.cta_button %}
+                    <button class="btn">{{ page.header.cta_button_text }}</button>
+                {% endif %}
             </div>
             {% endif %}
         </div>

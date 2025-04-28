@@ -18,6 +18,16 @@ form:
                 small: Small   = 4 / 3 / 2 columns
                 standard: Standard  = 3 / 2 / 1 columns
 
+            header.text_align:
+              type: select
+              label: Text Alignment
+              highlight: left
+              default: left
+              options:
+                left: Left
+                center: Center
+                right: Right
+
             header.features:
               name: features
               type: list

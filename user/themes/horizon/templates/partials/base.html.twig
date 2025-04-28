@@ -22,20 +22,37 @@
     {% if theme_var('spectre.exp') %}{% do assets.addCss('theme://css-compiled/spectre-exp'~compress)  %}{% endif %}
     {% if theme_var('spectre.icons') %}{%  do assets.addCss('theme://css-compiled/spectre-icons'~compress) %}{% endif %}
     {% do assets.addCss('theme://css-compiled/theme'~compress) %}
-    {% do assets.addCss('theme://css/custom.css') %}
     {% do assets.addCss('theme://css/line-awesome.min.css') %}
+    {% do assets.addCss('theme://css/custom.css') %}
+
+    <style>
+        :root {
+            --primary-bg: {{ grav.theme.config.primary_bg.color }};
+            --secondary-bg: {{ grav.theme.config.secondary_bg.color }};
+            --text-dark: {{ grav.theme.config.text_dark.color }};
+            --text-light: {{ grav.theme.config.text_light.color }};
+            --accent-soft1: {{ grav.theme.config.accent_soft1.color }};
+            --accent-soft2: {{ grav.theme.config.accent_soft2.color }};
+            --accent-soft3: {{ grav.theme.config.accent_soft3.color }};
+            --highlight: {{ grav.theme.config.highlight.color }};
+            --transition: all 0.3s ease;
+        }
+    </style>
+
 {% endblock %}
 
 {% block javascripts %}
     {% do assets.addJs('jquery', 101) %}
     {% do assets.addJs('theme://js/jquery.treemenu.js', {group:'bottom'}) %}
     {% do assets.addJs('theme://js/site.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://js/custom.js', {group:'bottom'}) %}
 {% endblock %}
 
 {% block assets deferred %}
     {{ assets.css()|raw }}
     {{ assets.js()|raw }}
 {% endblock %}
+
 </head>
 <body id="top" class="{% block body_classes %}{{ body_classes }}{% endblock %}">
     <div id="page-wrapper">
@@ -47,7 +64,6 @@
                         {% include 'partials/logo.html.twig' %}
                     </section>
                     <section class="navbar-section desktop-menu">
-
                         <nav class="dropmenu animated">
                         {% block header_navigation %}
                             {% include 'partials/navigation.html.twig' %}
@@ -57,18 +73,24 @@
                         {% if config.plugins.login.enabled and grav.user.username %}
                             <span class="login-status-wrapper"><i class="fa fa-user"></i> {% include 'partials/login-status.html.twig' %}</span>
                         {% endif %}
-
                     </section>
+                    <section class="navbar-section">
+                        {% if grav.theme.config.header_calltoaction_button %}
+                            <button class="btn small" onclick="{{ grav.theme.config.header_calltoaction_button_action }}">{{ grav.theme.config.header_calltoaction_button_text }} <i class="fa fa-fw {{ grav.theme.config.header_calltoaction_button_icon }}"></i></button>
+                        {% endif %}
+                    </section>
+                    <div class="mobile-menu">
+                        <div class="button_container" id="toggle">
+                            <span class="top"></span>
+                            <span class="middle"></span>
+                            <span class="bottom"></span>
+                        </div>
+                    </div>
                 </nav>
             </section>
+
         </section>
-        <div class="mobile-menu">
-            <div class="button_container" id="toggle">
-                <span class="top"></span>
-                <span class="middle"></span>
-                <span class="bottom"></span>
-            </div>
-        </div>
+
     {% endblock %}
 
     {% block hero %}{% endblock %}

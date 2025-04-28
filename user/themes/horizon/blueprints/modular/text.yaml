@@ -9,11 +9,47 @@ form:
           fields:
             header.media_order:
               label: Page Media (first one will be displayed next to your content)
+            header.cta_button:
+              type: toggle
+              label: CallToAction Button aktivieren
+              help: Hier ist eine hilfreiche Erklärung für die Checkbox
+              highlight: 1
+              default: 1
+              options:
+                1: Ja
+                0: Nein
+            header.cta_button_text:
+              type: text
+              label: CallToAction Button Text
+              size: medium
+            header.cta_button_target:
+              type: text
+              label: CallToAction Button Target
+              size: medium
+            header.image_type:
+              type: select
+              label: Image Gallery Type
+              options:
+                'default': 'One Image'
+                'poleroid': 'Poleroid Stack'
             header.image_align:
               type: select
               label: Image position
               classes: fancy
-              default: left
+              default: right
               options:
                 'left': 'Left'
                 'right': 'Right'
+            header.images:
+              type: list
+              label: Images
+              fields:
+                .image:
+                  type: file
+                  label: Image
+                  destination: '@self'
+                  accept:
+                    - image/*
+                .alt:
+                  type: text
+                  label: Alt Text

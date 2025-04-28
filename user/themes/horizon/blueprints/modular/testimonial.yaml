@@ -1,0 +1,18 @@
+title: Testimonial Karussell
+'@extends':
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    header.testimonials:
+      name: testimonials
+      type: list
+      label: Testimonials
+      fields:
+        .text:
+          type: textarea
+          label: Testimonial Text
+        .author:
+          type: text
+          label: Autor

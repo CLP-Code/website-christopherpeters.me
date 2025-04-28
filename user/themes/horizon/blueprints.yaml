@@ -44,6 +44,54 @@ form:
         grid-lg: Large
         grid-md: Medium
 
+    color_section:
+        type: fieldset
+        collapsible: true
+        collapsed: false
+        icon: bold
+        title: Colors
+        fields:
+
+          primary_bg.color:
+            type: colorpicker
+            label: Primary Background Color
+            default: "#FFFBF6"
+
+          secondary_bg.color:
+            type: colorpicker
+            label: Secondary Background Color
+            default: "#F5F0E8"
+
+          text_dark.color:
+            type: colorpicker
+            label: Dark Text Color
+            default: "#4A4A4A"
+
+          text_light.color:
+            type: colorpicker
+            label: Light Text Color
+            default: "#8A8A8A"
+
+          accent_soft1.color:
+            type: colorpicker
+            label: Accent Color 1
+            default: "#D6C9C0"
+
+          accent_soft2.color:
+            type: colorpicker
+            label: Accent Color 2
+            default: "#BFD0C9"
+
+          accent_soft3.color:
+            type: colorpicker
+            label: Accent Color 3
+            default: "#E2D7D0"
+
+          highlight.color:
+            type: colorpicker
+            label: Highlight Color
+            default: "#F0DBC1"
+
     header_section:
       type: section
       title: Header Defaults
@@ -117,10 +165,38 @@ form:
       validate:
         type: bool
 
-    footer_section:
-      type: section
-      title: Footer Defaults
-      underline: true
+    header_calltoaction_button:
+      type: toggle
+      label: Call To Action Button
+      help: When enabled, a transparent style will be used
+      highlight: 0
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    header_calltoaction_button_text:
+      type: text
+      label: CTA - Button Text
+      help: Provides the possibility to Add Text to the CTA Button
+      size: medium
+      default: ''
+      
+    header_calltoaction_button_action:
+      type: text
+      label: CTA - Button Action
+      help: Provides the possibility to Add Link to the CTA Button
+      size: medium
+      default: ''
+
+    header_calltoaction_button_icon:
+      type: text
+      label: CTA - Button Icon
+      help: Provides the possibility to Add an Icon to the CTA Button
+      size: medium
+      default: ''
 
     sticky-footer:
       type: toggle

@@ -1,0 +1,21 @@
+<div class="gallery-bento">
+    <div class="gallery-bento-grid">
+        {% for image in page.media.images %}
+            <div class="gallery-bento-item">
+                <a href="#lightbox-{{ loop.index }}" class="lightbox-trigger">
+                    {{ image.html('', '', 'gallery-thumb')|raw }}
+                    <div class="overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </a>
+            </div>
+
+            <div id="lightbox-{{ loop.index }}" class="lightbox">
+                <div class="lightbox-content">
+                    <a href="#gallery" class="close">&times;</a>
+                    {{ image.html('', '', 'lightbox-image')|raw }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

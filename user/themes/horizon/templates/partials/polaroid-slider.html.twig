@@ -1,0 +1,7 @@
+<div class="gallery polaroid-slider">
+  {% for image in page.header.images %}
+        {% for file in image.image %}
+        {{ page.media[file.path].display('thumbnail').attribute('loading', 'eager').attribute('style', 'transform: rotate(' ~ random(-12, 6) ~ 'deg)').html('',image.alt, 'thumbnail')|raw }}
+        {% endfor %}
+  {% endfor %}
+</div>

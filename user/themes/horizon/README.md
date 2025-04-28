@@ -1,8 +1,8 @@
-# Quark Theme
+# Horizon Theme
 
-![](assets/quark-screenshots.jpg)
+![](assets/horizon-screenshots.jpg)
 
-**Quark** is the new default theme for [Grav CMS](http://github.com/getgrav/grav).  This theme is built with the [Spectre.css](https://picturepan2.github.io/spectre/) framework and provides a powerful base for developing your own themes. Quark uses functionality that is only available in Grav 1.4+, as such you cannot run Quark on earlier versions of Grav.
+**Horizon** is the new default theme for [Grav CMS](http://github.com/getgrav/grav).  This theme is built with the [Spectre.css](https://picturepan2.github.io/spectre/) framework and provides a powerful base for developing your own themes. Quark uses functionality that is only available in Grav 1.4+, as such you cannot run Quark on earlier versions of Grav.
 
 ## Features
 
